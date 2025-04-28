@@ -1,0 +1,6 @@
+from scapy.all import sniff
+
+def packet_callback(packet):
+    print(f"Packet captured: {packet.summary()}")
+
+sniff(filter="ip", prn=packet_callback, store=0)
