@@ -1,0 +1,23 @@
+training_data.csv
+  flow_id,source_ip,dest_ip,protocol,packet_size,label
+  1,192.168.1.10,192.168.1.1,TCP,60,BENIGN
+  2,10.0.0.5,192.168.1.1,ICMP,128,MALICIOUS
+  3,172.16.0.2,192.168.1.15,MQTT,50,BENIGN
+  4,10.0.0.8,192.168.1.2,UDP,512,MALICIOUS
+
+
+device_profiles.json
+  {
+  "headphone_A": {
+    "average_packet_size": 100,
+    "allowed_protocols": ["MQTT", "TCP"],
+    "normal_ports": [1883, 443]
+  },
+  "thermostat_B": {
+    "average_packet_size": 150,
+    "allowed_protocols": ["CoAP", "UDP"],
+    "normal_ports": [5683]
+  }
+}
+
+    
