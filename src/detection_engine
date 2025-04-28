@@ -1,0 +1,6 @@
+def detect_threat(packet):
+    if packet.haslayer('TCP') and packet['TCP'].flags == 'S':
+        return "Possible SYN Flood Attack detected"
+    if packet.haslayer('Raw') and b"malware" in packet['Raw'].load:
+        return "Malicious Payload Detected"
+    return "No threat detected"
