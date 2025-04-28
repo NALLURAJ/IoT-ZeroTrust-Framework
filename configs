@@ -1,0 +1,14 @@
+# Snort Configuration File (Basic)
+
+# Define variables
+var HOME_NET [192.168.1.0/24]
+var EXTERNAL_NET any
+
+# Set rule paths
+var RULE_PATH /etc/snort/rules
+
+# Include custom rules
+include $RULE_PATH/local.rules
+
+# Output settings
+output alert_fast: /var/log/snort/snort_alerts.log
